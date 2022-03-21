@@ -33,8 +33,8 @@ function updateBgColor() {
 function saveEvent(event) {
     // get the input element of place on where click event fires 
     var siblingEls = $(event.currentTarget).siblings();
-    var time = siblingEls[0].textContent;
-    var eventItem = siblingEls[1].value;
+    var time = $(siblingEls[0]).text();
+    var eventItem = $(siblingEls[1]).val();
 
     if(eventItem === "") {
         localStorage.removeItem(time);
