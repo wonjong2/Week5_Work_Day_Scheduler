@@ -1,6 +1,5 @@
 $("#currentDay").text(moment().format("dddd, MMMM Do YYYY"));
 
-// var ulEl = $("ul");
 var containerEl = $(".container");
 containerEl.addClass("timeblocks");
 
