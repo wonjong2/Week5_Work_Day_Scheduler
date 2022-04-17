@@ -3,12 +3,15 @@ $("#currentDay").text(moment().format("dddd, MMMM Do YYYY"));
 var containerEl = $(".container");
 containerEl.addClass("timeblocks");
 
+// Array for the pair of time string and numerical value
 var times = [["9AM", 9], ["10AM", 10], ["11AM", 11], ["12PM", 12], ["1PM", 13], ["2PM", 14], ["3PM", 15], ["4PM", 16], ["5PM", 17]];
 
 var timeInterval;
 
+// Add event listener to the buttons
 containerEl.on("click", ".btn", saveEvent);
 
+// Function to update color of each time slots whenever hour value changes
 function updateBgColor() {
     var currentHour = moment().hour();
     var currentMin;
@@ -29,8 +32,9 @@ function updateBgColor() {
     timeInterval = setTimeout(updateBgColor, 3600000-(currentMin*60000));
 }
 
+// Function to save the event to the local storage
 function saveEvent(event) {
-    // get the input element of place on where click event fires 
+    // Get the input element of place on where click event fires 
     var siblingEls = $(event.currentTarget).siblings();
     var time = $(siblingEls[0]).text();
     var eventItem = $(siblingEls[1]).val();
@@ -45,7 +49,7 @@ function saveEvent(event) {
     return;
 }
 
-// create a list group with input groups
+// Create a list group with input groups
 function makeTimeblocks() {
     var divEl;
     var spanEl;
