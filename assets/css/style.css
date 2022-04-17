@@ -42,16 +42,19 @@ textarea {
   border-top: 1px dashed #000000;
 }
 
+/* Style for the past events */
 .past {
   background-color: #d3d3d3;
   color: black;
 }
 
+/* Style for the present event */
 .present {
   background-color: #ff6961;
   color: black;
 }
 
+/* Style for the future events */
 .future {
   background-color: #77dd77;
   color: black;
